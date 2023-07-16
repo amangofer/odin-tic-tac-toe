@@ -1,5 +1,135 @@
+:root {
+    --primary: #1A2B33;
+    --secondary: #1E3640;
+    --grey: #A9BEC8;
+    --dark-cyan: #34C3BE;
+    --lighten-yellow: #F2B138;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    background-color: #14bdac;
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    padding: 1rem 0;
+}
+header h1 {
+    color: #DFF3E8;
+    text-align: center;
+    font-size: 4rem;
+}
+
+main {
+    display: grid;
+    place-content: center;
+}
+
+.game-state {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: #ffff;
+    padding: 1rem 0;
+}
+
+.player-score {
+    border: 2px solid #f3f3f3;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+
+.player-score h2 {
+    display: flex;
+    gap: 4rem;
+}
+
+.current-player {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    color: #f3f3f3;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f3f3f3;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 200px));
+    gap: 1rem;
+    width: 600px;
+    background-color: #289c90;
+}
+
+.box {
+    background-color: #14bdac;
+    font-size: 10rem;
+    display: grid;
+    place-content: center;
+    height: 200px;
+}
+.box:hover {
+    cursor: pointer;
+}
+
+.x-color {
+    color: #C55D47;
+    display: grid;
+    place-content: center;
+    /* margin-bottom: 2rem; */
+}
+.o-color {
+    color: #2C4457;
+    display: grid;
+    place-content: center;
+    /* margin-bottom: 2rem; */
+}
+
+#restart {
+    border: none;
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight:bold;
+    background-color: inherit;
+    color: #344B47;
+}
+
+#restart:hover {
+    cursor: pointer;
+    color: #22312f;
+}
+
+@media only screen and (max-width: 575px) {
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .game-state{
+        margin-bottom: 0.5rem;
+    }
+
+    .current-player {
+        margin-bottom: 2rem;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(3, 100px);
+        width: auto;
+    }
+    .box {
+        height: 100px;
+        font-size: 6rem;
+    }
+
+    #restart {
+        font-size: 1.5rem;
+    }
 }
